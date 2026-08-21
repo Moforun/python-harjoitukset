@@ -1,5 +1,4 @@
 import math
-
 säte = float(input("Anna ympyrän säte: "))
 pinta_ala = math.pi * säte ** 2
 
