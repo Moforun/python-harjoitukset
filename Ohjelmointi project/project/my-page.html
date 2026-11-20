@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Lorem of the Ipsum - School project">
+    <title>Lorem of the Ipsum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1><img src="img/Logo.png" alt="Lorem of the Ipsum"></h1>
+    <nav>
+        <ul>
+            <li><a href="#home" data-page="home">Home</a></li>
+            <li><a href="#products" data-page="products">Products</a></li>
+            <li><a href="#contact" data-page="contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div id="home" class="page">
+        <article>
+            <h2>Welcome</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        </article>
+        <div class="cards">
+            <article>
+                <img src="img/Metropolia1.png" alt="Metropolia valkoinen">
+                <h3>Eat</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </article>
+            <article>
+                <img src="img/Metropolia2.png" alt="Metropolia violetti">
+                <h3>Study</h3>
+                <p>Sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </article>
+            <article>
+                <img src="img/Metropolia3.png" alt="Metropolia sininen">
+                <h3>Sleep</h3>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            </article>
+        </div>
+    </div>
+
+    <section id="products" class="page" hidden>
+        <h2>Products</h2>
+        <div class="grid">
+            <article>
+                <img src="img/Metropolia1.png" alt="Metropolia valkoinen">
+                <h3>Product one</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </article>
+            <article>
+                <img src="img/Metropolia2.png" alt="Metropolia violetti">
+                <h3>Product two</h3>
+                <p>Sed do eiusmod tempor incididunt ut labore.</p>
+            </article>
+            <article>
+                <img src="img/Metropolia3.png" alt="Metropolia sininen">
+                <h3>Product three</h3>
+                <p>Ut enim ad minim veniam, quis nostrud.</p>
+            </article>
+            <article>
+                <img src="img/Metropolia4.png" alt="Metropolia pinkki">
+                <h3>Product four</h3>
+                <p>Duis aute irure dolor in reprehenderit.</p>
+            </article>
+            <article>
+                <img src="img/Metropolia5.png" alt="Metropolia ruskea">
+                <h3>Product five</h3>
+                <p>Excepteur sint occaecat cupidatat non proident.</p>
+            </article>
+            <article>
+                <img src="img/Metropolia6.png" alt="Metropolia punainen">
+                <h3>Product six</h3>
+                <p>Sunt in culpa qui officia deserunt mollit.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact" class="page" hidden>
+        <h2>Contact Info</h2>
+        <div class="contact">
+            <form action="#" method="post">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email">
+                <label for="msg">Message</label>
+                <textarea id="msg" name="msg" rows="6"></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div>
+                <img src="img/map.png" alt="Map of our location">
+                <p>Karaportti 2<br>02610 Espoo<br>info@metropolia.fi</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Metropolia</p>
+</footer>
+
+<script>
+    const pages = document.querySelectorAll('.page');
+    const links = document.querySelectorAll('nav a');
+
+    function show() {
+        const id = location.hash.slice(1) || 'home';
+        pages.forEach(p => { p.hidden = p.id !== id; });
+        links.forEach(a => {
+            if (a.dataset.page === id) {
+                a.setAttribute('aria-current', 'page');
+            } else {
+                a.removeAttribute('aria-current');
+            }
+        });
+    }
+
+    window.addEventListener('hashchange', show);
+    show();
+</script>
+</body>
+</html>

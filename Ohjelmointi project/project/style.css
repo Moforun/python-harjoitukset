@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'Indie Flower', cursive;
+    src: url(fonts/IndieFlower-Regular.ttf) format("truetype");
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: myFont, Indie Flower, cursive;
+    background:
+        linear-gradient(rgba(11, 31, 36, 0.35), rgba(11, 31, 36, 0.35)),
+        url(img/Hallowiiner.png) center / cover no-repeat fixed;
+    color: #0B1F24;
+    line-height: 1.6;
+}
+
+header {
+    background: #0B1F24;
+    color: #bbe3da;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ADDED: logo in the header */
+header h1 { margin: 0; }
+header h1 img { height: 50px; width: auto; }
+
+.logo { margin: 0; font-size: 2rem; font-weight: bold; }
+
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; }
+
+nav a {
+    display: block;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+nav a:hover { background: #0F5257; }
+nav a[aria-current="page"] { background: #037f71; color: #ffffff; }
+
+main { max-width: 1000px; margin: 0 auto; padding: 30px 20px; }
+
+.page[hidden] { display: none; }
+
+/* Same space at the top of every page so the picture shows */
+.page { padding: 150px 0 40px; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.hero { width: 100%; border-radius: 10px; }
+
+article {
+    background: rgba(15, 82, 87, 0.85);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+article img { border-radius: 6px; margin-bottom: 10px; }
+
+.intro { background: #0B1F24; color: #ffffff; }
+.intro h1 { margin-top: 0; color: #ffffff; }
+
+h2 { color: #ffffff; }
+.intro h2 { margin-top: 0; color: #F4A261; }
+#home h2 { margin-top: 0; }
+
+#products h2, #contact h2 {
+    display: inline-block;
+    background: rgba(11, 31, 36, 0.85);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+h3 { color: #ffffff; margin: 0 0 8px; }
+
+.cards, .grid { display: grid; gap: 20px; }
+.cards { grid-template-columns: repeat(3, 1fr); }
+.grid { grid-template-columns: repeat(3, 1fr); }
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    background: rgba(15, 82, 87, 0.85);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form { display: flex; flex-direction: column; gap: 8px; }
+
+input, textarea {
+    padding: 10px;
+    border: 2px solid #1F7A70;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #0B1F24;
+    font-family: inherit;
+}
+
+button {
+    padding: 12px;
+    background: #1F7A70;
+    color: #ffffff;
+    border: 0;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover { background: #0F5257; }
+
+footer {
+    background: #0B1F24;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p { margin: 0; }
+#home > article h2 { text-align: center; }
+#home > article p { max-width: 700px; margin: 0 auto; }
+#products, #contact { padding-top: 0; }
